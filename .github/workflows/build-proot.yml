@@ -16,7 +16,7 @@ jobs:
             apk add --no-cache build-base git linux-headers bsd-compat-headers talloc-dev talloc-static file
             git clone --depth 1 https://github.com/proot-me/proot
             cd proot/src
-            make LDFLAGS="-static"
+            LDFLAGS="-static" make
             cp proot /out/libproot.so
             cp loader/loader /out/libproot-loader.so
             file /out/*
