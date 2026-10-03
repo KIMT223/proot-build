@@ -13,7 +13,7 @@ jobs:
           mkdir -p out
           docker run --rm -v "$PWD/out:/out" alpine:3.20 sh -c '
             set -e
-            apk add --no-cache build-base git linux-headers talloc-dev talloc-static file
+            apk add --no-cache build-base git linux-headers bsd-compat-headers talloc-dev talloc-static file
             git clone --depth 1 https://github.com/proot-me/proot
             cd proot/src
             make LDFLAGS="-static"
